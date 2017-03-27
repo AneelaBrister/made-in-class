@@ -1,0 +1,21 @@
+<h2>Exercise 2: Testing page/widget bindings</h2>
+<div>
+	<button (click)="_onChangeDataLayout()">Change Data on Layout</button>	
+	<button (click)="_onChangeDataWidget()">Change Data on Widget</button>	
+</div>
+<section class="card">
+  <div class="card-content">
+	<p>
+    <div class="card-title">The widgets below bind to data with an async pipe</div>
+	<div>The Layout object is obtained from DataService</div>
+	<div>It is an array of BinderData objects</div>
+	<p>
+    <ul class="collection">
+      <li class="collection-item" *ngFor="let options of _layout | async; let i = index">
+        {{i}}: <app-widget [options]="options" ></app-widget>
+      </li>
+    </ul>
+  </div>
+</section>
+
+

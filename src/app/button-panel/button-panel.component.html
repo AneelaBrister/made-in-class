@@ -1,0 +1,18 @@
+<h2>Exercise 1: testing data binding</h2>
+
+<div><button (click)="_onRefresh()">Refresh data</button></div>
+<div><button (click)="_onBindingContextChange()">Update Binding Context</button></div>
+<div>
+	<app-binder 
+		[bindingContext]="_bindingContext"
+		[bindingContextSubject]="_bindingContextSubject | async"
+		[simpleStringVar]="_simpleStringVar" 
+		[objectVar]="_objectVar" 
+		[objectSet]="_objectVar"
+		[objectSetWithAny]="_objectVar"
+		[slowObjectSetWithAny]="_slowObjectVar"
+		[slowObjectSetWithAnyAsync]="_slowObjectVarAsync | async"
+		[staticObjectSetWithAny]="_staticObj"
+	>
+	</app-binder>
+</div>

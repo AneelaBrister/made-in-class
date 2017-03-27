@@ -1,0 +1,67 @@
+<div class="box">
+	<div><b>Simple string variable: </b></div>
+	<p>
+	<div><span class="data">{{simpleStringVar}}</span></div>
+</div>
+<p><p>
+<div class="box">
+	<div><b>Object variable</b></div> 
+	<p>
+	<div>string: <span class="data">{{objectVar?.simpleString}}</span> number: <span class="data">{{objectVar?.simpleNumber}}</span></div>
+	<p>
+	<div>Binding name: <span class="data">{{objectVar?.bindingName}}</span>Binding context: <span *ngIf="bindingContext" class="data">{{bindingContext[objectVar?.bindingName]}}</span></div>
+	<p>
+	<div>Async Binding context: <span *ngIf="bindingContextSubject" class="data">{{bindingContextSubject[objectVar?.bindingName]}}</span></div>
+</div>
+<p><p>
+<div class="box">
+	<div><b>Object variable through set</b></div> 
+	<p>
+	<div>string: <span class="data">{{_objectSet?.simpleString}}</span> number: <span class="data">{{_objectSet?.simpleNumber}}</span></div>
+	<p>
+	<div>Binding name: <span class="data">{{_objectSet?.bindingName}}</span>Binding context: <span *ngIf="bindingContext" class="data">{{bindingContext[_objectSet?.bindingName]}}</span></div>
+	<p>
+	<div>Async Binding context: <span *ngIf="bindingContextSubject" class="data">{{bindingContextSubject[_objectSet?.bindingName]}}</span></div>
+</div>
+<p><p>
+<div class="box">
+	<div><b>Object through set with 'Any'</b></div> 
+	<p>
+	<div>string: <span class="data">{{_objectSetAny?.simpleString}}</span> number: <span class="data">{{_objectSetAny?.simpleNumber}}</span></div>
+	<p>
+	<div>Binding name: <span class="data">{{_objectSetAny?.bindingName}}</span>Binding context: <span *ngIf="bindingContext" class="data">{{bindingContext[_objectSetAny?.bindingName]}}</span></div>
+	<p>
+	<div>Async Binding context: <span *ngIf="bindingContextSubject" class="data">{{bindingContextSubject[_objectSetAny?.bindingName]}}</span></div>
+</div>
+<p><p>
+<div class="box">
+	<div><b>Slow object through set with 'Any'</b></div> 
+	<p>
+	<div>string: <span class="data">{{_slowObjectSetAny?.simpleString}}</span> number: <span class="data">{{_slowObjectSetAny?.simpleNumber}}</span></div>
+	<p>
+	<div>Binding name: <span class="data">{{_slowObjectSetAny?.bindingName}}</span>Binding context: <span *ngIf="bindingContext" class="data">{{bindingContext[_slowObjectSetAny?.bindingName]}}</span></div>
+	<p>
+	<div>Async Binding context: <span *ngIf="bindingContextSubject" class="data">{{bindingContextSubject[_slowObjectSetAny?.bindingName]}}</span></div>
+</div>
+<p><p>
+<div class="box">
+	<div><b>Slow object through set with 'Any' and Async pipe</b></div> 
+	<p>
+	<div>string: <span class="data">{{_slowObjectSetAnyAsync?.simpleString}}</span> number: <span class="data">{{_slowObjectSetAnyAsync?.simpleNumber}}</span></div>
+	<p>
+	<div>Binding name: <span class="data">{{_slowObjectSetAnyAsync?.bindingName}}</span>Binding context: <span *ngIf="bindingContext" class="data">{{bindingContext[_slowObjectSetAnyAsync?.bindingName]}}</span></div>
+	<p>
+	<div>Async Binding context: <span *ngIf="bindingContextSubject" class="data">{{bindingContextSubject[_slowObjectSetAnyAsync?.bindingName]}}</span></div>
+</div>
+<p><p>
+<div class="box">
+	<div><b>Static object through set with 'Any'</b></div> 
+	<p>
+	<div>string: <span class="data">{{_staticObjectSetAny?.simpleString}}</span> number: <span class="data">{{_staticObjectSetAny?.simpleNumber}}</span></div>
+	<p>
+	<div>Binding name: <span class="data">{{_staticObjectSetAny?.bindingName}}</span>Binding context: <span *ngIf="bindingContext" class="data">{{bindingContext[_staticObjectSetAny?.bindingName]}}</span></div>
+	<p>
+	<div>Async Binding context: <span *ngIf="bindingContextSubject" class="data">{{bindingContextSubject[_staticObjectSetAny?.bindingName]}}</span></div>
+</div>
+<p>
+	
