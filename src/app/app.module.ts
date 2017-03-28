@@ -10,11 +10,13 @@ import { ButtonPanelComponent } from './button-panel/button-panel.component';
 import { BinderComponent } from './binder/binder.component';
 import { DataService } from './data.service';
 import { AsyncPageComponent } from './async-page/async-page.component';
+import { SubscribePageComponent } from './subscribe-page/subscribe-page.component';
 import { WidgetComponent } from './widget/widget.component';
 
 const appRoutes: Routes = [
 	{ path: '', component: ButtonPanelComponent, pathMatch: 'full' },
-	{ path: 'async-page', component: AsyncPageComponent }
+	{ path: 'async-page', component: AsyncPageComponent },
+	{ path: 'subscribe-page', component: SubscribePageComponent }
 ];
 
 @NgModule({
@@ -23,6 +25,7 @@ const appRoutes: Routes = [
     ButtonPanelComponent,
     BinderComponent,
     AsyncPageComponent,
+	SubscribePageComponent,
     WidgetComponent
   ],
   imports: [

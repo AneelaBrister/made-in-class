@@ -3,16 +3,6 @@
 	<button (click)="_onChangeDataLayout()">Change Data on Layout</button>	
 	<button (click)="_onChangeDataWidget()">Change Data on Widget</button>	
 </div>
-<section class="card">
-  <div class="card-content">
-    <div class="card-title">Widgets with async pipe</div>
-    <ul class="collection">
-      <li class="collection-item" *ngFor="let options of _layout | async">
-        <app-widget [options]="options" ></app-widget>
-      </li>
-    </ul>
-  </div>
-</section>
 
 <section class="card">
   <div class="card-content">

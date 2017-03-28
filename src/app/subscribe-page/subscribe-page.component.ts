@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
-import { DataManipulatorService } from '../data-manipulator.service';
+import { DataService } from '../data.service';
 import { BinderData } from '../binder-data';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -14,20 +14,11 @@ export class SubscribePageComponent implements OnInit {
 	@ViewChildren(WidgetComponent) private _widgets: QueryList<WidgetComponent>;
 
 	private _layoutWithSubscribe: BinderData[];
-	private _layout: Observable<BinderData[]>;
-	private _refreshCount$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
 	private _refreshCount: number = 1;
 
-	constructor(private _data: DataManipulatorService) {}
+	constructor(private _data: DataService) {}
 
 	ngOnInit() {
-		this._layout = this._data.getPageLayout1()
-			.combineLatest(this._refreshCount$, (data: BinderData[], count: number) => {
-				data.forEach((d: BinderData) => this._updateRow(d, count));
-				return data;
-			})
-			.do((data) => console.log('combineLatest fired', data));
-
 		this._data.getPageLayout2().subscribe((bd: BinderData[]) => {
 			this._layoutWithSubscribe = bd;
 		});
@@ -35,7 +26,6 @@ export class SubscribePageComponent implements OnInit {
 
 	private _onChangeDataLayout(): void {
 		this._refreshCount++;
-		this._refreshCount$.next(this._refreshCount);
 		this._layoutWithSubscribe.forEach((d: BinderData) => this._updateRow(d, this._refreshCount));
 	}
 
